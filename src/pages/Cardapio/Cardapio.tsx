@@ -17,10 +17,10 @@ export default function Cardapio() {
         <Logo />
       </nav>
       <header className={styles.header}>
-        <div className={styles.header__text}> Cardápio </div>
+        <div className={styles.header__text}> Autêntica Massa Italiana   </div>
       </header>
       <section className={styles.cardapio}>
-        <h3 className={styles.cardapio__titulo}> Autêntica Massa Italiana </h3>
+        <h3 className={styles.cardapio__titulo}> Cardápio </h3>
         <Buscador search={search} setSearch={setSearch} />
         <div className={styles.cardapio__filtros}>
           <Filtros filtro={filtro} setFiltro={setFiltro} />
