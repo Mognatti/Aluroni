@@ -17,7 +17,7 @@ export default function Cardapio() {
         <Logo />
       </nav>
       <header className={styles.header}>
-        <div className={styles.header__text}> Mama Minha Massa </div>
+        <div className={styles.header__text}> Autêntica Massa Italiana   </div>
       </header>
       <section className={styles.cardapio}>
         <h3 className={styles.cardapio__titulo}> Cardápio </h3>
