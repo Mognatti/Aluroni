@@ -1,6 +1,6 @@
-import filtros from "./filtros.json";
-import styles from "./filtros.module.scss";
-import classNames from "classnames";
+import filtros from './filtros.json';
+import styles from './filtros.module.scss';
+import classNames from 'classnames';
 
 type Iopcao = (typeof filtros)[0];
 
@@ -20,7 +20,7 @@ export default function Filtros({ filtro, setFiltro }: FiltroProps) {
         <button
           className={classNames({
             [styles.filtros__filtro]: true,
-            [styles["filtros__filtro--ativo"]]: filtro === opcao.id,
+            [styles['filtros__filtro--ativo']]: filtro === opcao.id,
           })}
           key={opcao.id}
           onClick={() => selecionarFiltro(opcao)}

@@ -1,7 +1,7 @@
-import Item from "./Item";
-import cardapio from "./pratos.json";
-import styles from "./Pratos.module.scss";
-import { useState, useEffect } from "react";
+import Item from './Item';
+import cardapio from './pratos.json';
+import styles from './Pratos.module.scss';
+import { useState, useEffect } from 'react';
 
 interface Props {
   search: string;
@@ -13,7 +13,7 @@ export default function Pratos({ search, filtro, ordenador }: Props) {
   const [lista, setLista] = useState(cardapio);
 
   const testeBusca = (nomeItem: string) => {
-    const reg = new RegExp(search, "i");
+    const reg = new RegExp(search, 'i');
     return reg.test(nomeItem);
   };
 
@@ -26,21 +26,21 @@ export default function Pratos({ search, filtro, ordenador }: Props) {
 
   function ordenaCrescente(
     lista: typeof cardapio,
-    criterio: "size" | "serving" | "price"
+    criterio: 'size' | 'serving' | 'price'
   ) {
     return lista.sort((a, b) => (a[criterio] > b[criterio] ? 1 : -1));
   }
 
   const ordenar = (lista: typeof cardapio) => {
     switch (ordenador) {
-      case "qtd_pessoas":
-        return ordenaCrescente(lista, "serving");
-      case "preco":
-        return ordenaCrescente(lista, "price");
-      case "porcao":
-        return ordenaCrescente(lista, "size");
-      default:
-        return lista;
+    case 'qtd_pessoas':
+      return ordenaCrescente(lista, 'serving');
+    case 'preco':
+      return ordenaCrescente(lista, 'price');
+    case 'porcao':
+      return ordenaCrescente(lista, 'size');
+    default:
+      return lista;
     }
   };
 
