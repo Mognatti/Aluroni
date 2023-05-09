@@ -1,5 +1,5 @@
 import Item from './Item';
-import cardapio from './pratos.json';
+import cardapio from 'data/cardapio.json';
 import styles from './Pratos.module.scss';
 import { useState, useEffect } from 'react';
 
@@ -33,14 +33,14 @@ export default function Pratos({ search, filtro, ordenador }: Props) {
 
   const ordenar = (lista: typeof cardapio) => {
     switch (ordenador) {
-    case 'qtd_pessoas':
-      return ordenaCrescente(lista, 'serving');
-    case 'preco':
-      return ordenaCrescente(lista, 'price');
-    case 'porcao':
-      return ordenaCrescente(lista, 'size');
-    default:
-      return lista;
+      case 'qtd_pessoas':
+        return ordenaCrescente(lista, 'serving');
+      case 'preco':
+        return ordenaCrescente(lista, 'price');
+      case 'porcao':
+        return ordenaCrescente(lista, 'size');
+      default:
+        return lista;
     }
   };
 
