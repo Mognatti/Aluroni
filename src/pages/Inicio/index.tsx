@@ -1,5 +1,7 @@
 import cardapio from 'data/cardapio.json';
 import styles from './inicio.module.scss';
+import stylesTema from 'styles/Tema.module.scss';
+
 export default function Inicio() {
   const index = Math.floor(Math.random() * cardapio.length);
   const indexPlus = index >= cardapio.length - 1 ? index - 2 : index + 1;
@@ -7,7 +9,7 @@ export default function Inicio() {
 
   return (
     <section>
-      <h3 className={styles.titulo}>Recomendações da cozinha:</h3>
+      <h3 className={stylesTema.titulo}>Recomendações da cozinha:</h3>
       <div className={styles.recomendados}>
         {cardapio.map((item) =>
           cardapio.indexOf(item) === index ||
