@@ -1,6 +1,7 @@
 import cardapio from 'data/cardapio.json';
 import styles from './inicio.module.scss';
 import stylesTema from 'styles/Tema.module.scss';
+import nossaCasaBg from 'assets/nossa_casa.png';
 
 export default function Inicio() {
   const index = Math.floor(Math.random() * cardapio.length);
@@ -28,6 +29,14 @@ export default function Inicio() {
             false
           )
         )}
+      </div>
+      <br />
+      <h3 className={stylesTema.titulo}> Nossa Casa </h3>
+      <div className={styles.nossaCasa}>
+        <img src={nossaCasaBg} alt="Casa do Aluroni"></img>
+        <div className={styles.nossaCasa__endereco}>
+          Rua Vergueiro, 3185, <br></br> Vila Mariana - SP
+        </div>
       </div>
     </section>
   );
