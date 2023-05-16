@@ -2,11 +2,17 @@ import cardapio from 'data/cardapio.json';
 import styles from './inicio.module.scss';
 import stylesTema from 'styles/Tema.module.scss';
 import nossaCasaBg from 'assets/nossa_casa.png';
+import { useNavigate } from 'react-router-dom';
 
 export default function Inicio() {
   const index = Math.floor(Math.random() * cardapio.length);
   const indexPlus = index >= cardapio.length - 1 ? index - 2 : index + 1;
   const indexMinus = index <= 0 ? index + 2 : index - 1;
+  const navigate = useNavigate();
+
+  function maisDetalhes(prato: (typeof cardapio)[0]) {
+    navigate(`prato/${prato.id}`, { state: { prato } });
+  }
 
   return (
     <section>
@@ -22,7 +28,12 @@ export default function Inicio() {
               </div>
 
               <div>
-                <button className={styles.recomendado__botao}>Ver mais</button>
+                <button
+                  className={styles.recomendado__botao}
+                  onClick={() => maisDetalhes(item)}
+                >
+                  Ver mais
+                </button>
               </div>
             </div>
           ) : (
