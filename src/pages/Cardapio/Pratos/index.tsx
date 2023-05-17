@@ -2,6 +2,7 @@ import Item from './Item';
 import cardapio from 'data/cardapio.json';
 import styles from './Pratos.module.scss';
 import { useState, useEffect } from 'react';
+import { Cardapio } from 'types/pratos';
 
 interface Props {
   search: string;
@@ -25,13 +26,13 @@ export default function Pratos({ search, filtro, ordenador }: Props) {
   };
 
   function ordenaCrescente(
-    lista: typeof cardapio,
+    lista: Cardapio,
     criterio: 'size' | 'serving' | 'price'
   ) {
     return lista.sort((a, b) => (a[criterio] > b[criterio] ? 1 : -1));
   }
 
-  const ordenar = (lista: typeof cardapio) => {
+  const ordenar = (lista: Cardapio) => {
     switch (ordenador) {
       case 'qtd_pessoas':
         return ordenaCrescente(lista, 'serving');

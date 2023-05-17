@@ -3,6 +3,7 @@ import styles from './inicio.module.scss';
 import stylesTema from 'styles/Tema.module.scss';
 import nossaCasaBg from 'assets/nossa_casa.png';
 import { useNavigate } from 'react-router-dom';
+import { Prato } from 'types/pratos';
 
 export default function Inicio() {
   const index = Math.floor(Math.random() * cardapio.length);
@@ -10,7 +11,7 @@ export default function Inicio() {
   const indexMinus = index <= 0 ? index + 2 : index - 1;
   const navigate = useNavigate();
 
-  function maisDetalhes(prato: (typeof cardapio)[0]) {
+  function maisDetalhes(prato: Prato) {
     navigate(`prato/${prato.id}`, { state: { prato } });
   }
 
